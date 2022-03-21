@@ -28,6 +28,10 @@
 			</list>
 		</property>
 	</bean>
+	
+	<bean id="globalsProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="location" value="classpath:/egovframework/egovProps/globals.properties"/>
+    </bean>
 
 	<bean id="traceHandlerService" class="egovframework.rte.fdl.cmmn.trace.manager.DefaultTraceHandleManager">
 		<property name="reqExpMatcher">

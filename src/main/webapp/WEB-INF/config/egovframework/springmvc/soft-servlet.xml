@@ -27,30 +27,20 @@
         </property>
     </bean>
 
+     <mvc:interceptors>
+        <mvc:interceptor>
+        	<mvc:mapping path="/**" />
+		    <bean class="egovframework.com.interceptor.SystemBaseInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <!-- 화면처리용 JSP 파일명의  prefix, suffix 처리에 대한 mvc 설정  -->
     <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" p:order="1"
 	    p:viewClass="org.springframework.web.servlet.view.JstlView"
 	    p:prefix="/WEB-INF/jsp/" p:suffix=".jsp"/>
 
-<!--     로그인 체크가 필요한 URL과 로그인 여부를 체크해준다
-    <mvc:interceptors>
-        <mvc:interceptor>
-        	<mvc:mapping path="/**/*.do" />
-		    <bean class="egovframework.nfu.com.interceptor.SystemBaseInterceptor" />
-        </mvc:interceptor>
-        <mvc:interceptor>
-        	<mvc:mapping path="/apple/**/*.do" />
-		    <bean class="egovframework.nfu.com.interceptor.AuthenticInterceptor" />
-        </mvc:interceptor>
-    </mvc:interceptors> -->
 
     <!-- Annotation 을 사용하지 않는 경우에 대한 MVC 처리 설정 -->
-    <mvc:view-controller path="/cmmn/validator.do" view-name="cmmn/validator"/>
+    <mvc:view-controller path="/cmmn/validator" view-name="cmmn/validator"/>
     
-<!--     <mvc:annotation-driven>
-    	<mvc:argument-resolvers>
-    		<bean class="egovframework.nfu.utl.CustomArgumentResolver"></bean>
-    	</mvc:argument-resolvers>
-    </mvc:annotation-driven> -->
-
 </beans>
