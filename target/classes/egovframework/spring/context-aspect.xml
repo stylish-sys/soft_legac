@@ -53,7 +53,7 @@
 		</property>
 	</bean>
 
-	<bean id="egovHandler" class="egovframework.example.cmmn.EgovSampleExcepHndlr" />
-	<bean id="otherHandler" class="egovframework.example.cmmn.EgovSampleOthersExcepHndlr" />	
+    <bean id="egovHandler" class="egovframework.com.cmm.EgovComExcepHndlr" />
+    <bean id="otherHandler" class="egovframework.com.cmm.EgovComOthersExcepHndlr" />	
 	
 </beans>
